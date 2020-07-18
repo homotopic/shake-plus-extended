@@ -1,0 +1,69 @@
+name:                shake-plus-extended
+version:             0.1.0.0
+git:                 https://gitlab.com/shake-plus/shake-plus-extended
+license:             MIT
+author:              "Daniel Firth"
+maintainer:          "dan.firth@homotopic.tech"
+copyright:           "2020 Daniel Firth"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Experimental extensions to shake-plus
+category:            development, shake
+
+description:         Experimental extensions to shake-plus - `within`-style file rules, HashMap and IxSet batch loaders.
+
+default-extensions:
+- BangPatterns
+- BinaryLiterals
+- ConstraintKinds
+- DataKinds
+- DefaultSignatures
+- DeriveDataTypeable
+- DeriveFoldable
+- DeriveFunctor
+- DeriveGeneric
+- DeriveTraversable
+- DoAndIfThenElse
+- EmptyDataDecls
+- ExistentialQuantification
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTs
+- GeneralizedNewtypeDeriving
+- InstanceSigs
+- KindSignatures
+- LambdaCase
+- MultiParamTypeClasses
+- MultiWayIf
+- NamedFieldPuns
+- NoImplicitPrelude
+- OverloadedStrings
+- PartialTypeSignatures
+- PatternGuards
+- PolyKinds
+- RankNTypes
+- RecordWildCards
+- ScopedTypeVariables
+- StandaloneDeriving
+- TupleSections
+- TypeFamilies
+- TypeSynonymInstances
+- ViewPatterns
+
+dependencies:
+- base >= 4.7 && < 5
+- comonad
+- extra
+- ixset-typed
+- rio
+- path
+- shake
+- shake-plus >= 0.3.0.0
+- within
+
+library:
+  source-dirs: src
