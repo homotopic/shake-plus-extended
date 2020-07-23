@@ -28,6 +28,7 @@ library
       Development.Shake.Plus.Extended
       Development.Shake.Plus.Extended.FileRules
       Development.Shake.Plus.Extended.Loaders
+      Development.Shake.Plus.Extended.Local
       Development.Shake.Plus.Extended.Simple
   other-modules:
       Paths_shake_plus_extended
