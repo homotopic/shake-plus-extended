@@ -15,7 +15,17 @@ delocaliseOut x = ask >>= \r -> return $ (view localOut r </> x)
   let d = view localOut r
   (toFilePath d <> xs) %> (ract <=< stripProperPrefix d)
 
-(/|&>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => [FilePattern] -> (Path Rel File -> RAction r ()) -> m ()
-(/|&>) xs ract = ask >>= \r -> do
+(/|%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => [FilePattern] -> (Path Rel File -> RAction r ()) -> m ()
+(/|%>) xs ract = ask >>= \r -> do
   let d = view localOut r
   ((toFilePath d <>) <$> xs) |%> (ract <=< stripProperPrefix d)
+
+(/%^>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => FilePattern -> (Within Rel File -> RAction r ()) -> m ()
+(/%^>) xs ract = ask >>= \r -> do
+  let d = view localOut r
+  (toFilePath d <> xs) %> (ract <=< `asWithin` d)
+
+(/|%^>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => [FilePattern] -> (Within Rel File -> RAction r ()) -> m ()
+(/|%^>) xs ract = ask >>= \r -> do
+  let d = view localOut r
+  ((toFilePath d <>) <$> xs) |%> (ract <=< `asWithin` d)
