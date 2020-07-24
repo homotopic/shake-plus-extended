@@ -6,14 +6,14 @@ import Path
 import Within
 
 class HasLocalOut r where
-  localOut :: Lens' r (Path b Dir)
+  localOutL :: Lens' r (Path b Dir)
 
 (/%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => FilePattern -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
 (/%>) xs ract = ask >>= \r -> do
-  let d = view localOut r
+  let d = view localOutL r
   (toFilePath d <> xs) %> (\x -> ract (d, x))
 
 (/|%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => [FilePattern] -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
 (/|%>) xs ract = ask >>= \r -> do
-  let d = view localOut r
+  let d = view localOutL r
   ((toFilePath d <>) <$> xs) |%> (\x -> ract (d, x))
