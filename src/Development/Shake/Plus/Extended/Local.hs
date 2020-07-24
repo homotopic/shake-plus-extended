@@ -11,9 +11,9 @@ class HasLocalOut r where
 (/%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => FilePattern -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
 (/%>) xs ract = ask >>= \r -> do
   let d = view localOutL r
-  (toFilePath d <> xs) %> (\x -> ract (d, x))
+  (toFilePath d <> xs) %> (stripProperPrefix d >=> \x -> ract (d, x))
 
 (/|%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => [FilePattern] -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
 (/|%>) xs ract = ask >>= \r -> do
   let d = view localOutL r
-  ((toFilePath d <>) <$> xs) |%> (\x -> ract (d, x))
+  ((toFilePath d <>) <$> xs) |%> (stripProperPrefix d >=> \x -> ract (d, x))
