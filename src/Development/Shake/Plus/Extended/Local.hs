@@ -6,7 +6,7 @@ import Path
 import Within
 
 class HasLocalOut r where
-  localOutL :: Lens' r (Path b Dir)
+  localOutL :: Lens' r (Path Rel Dir)
 
 (/%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => FilePattern -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
 (/%>) xs ract = ask >>= \r -> do
