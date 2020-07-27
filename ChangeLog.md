@@ -1,5 +1,9 @@
 # Changelog for shake-plus-extended
 
+## v0.1.2.0
+
+* Add a proxy version of `batchLoadIndex`.
+
 ## v0.1.1.0
 
 * Add `HasLocalOut` class for accessing a lens with a local output directory.

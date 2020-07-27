@@ -12,6 +12,7 @@ module Development.Shake.Plus.Extended.Loaders (
 , batchLoadWithin
 , batchLoadWithin'
 , batchLoadIndex
+, batchLoadIndex'
 ) where
 
 import           Control.Comonad.Env as E
@@ -65,3 +66,12 @@ batchLoadIndex :: (MonadAction m, Ix.Indexable ixs x)
                -> [FilePattern]
                -> m (Ix.IxSet ixs x)
 batchLoadIndex rd dir fp = Ix.fromList . HM.elems <$> batchLoad dir fp rd
+
+-- | Take a loading function and a filepattern and return an IxSet
+batchLoadIndex' :: (MonadAction m, Ix.Indexable ixs x)
+                => Proxy ixs
+                -> (Path Rel File -> m x)
+                -> Path Rel Dir
+                -> [FilePattern]
+                -> m (Ix.IxSet ixs x)
+batchLoadIndex' proxy rd dir fp = Ix.fromList . HM.elems <$> batchLoad dir fp rd
