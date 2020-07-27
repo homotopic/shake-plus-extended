@@ -59,8 +59,11 @@ dependencies:
 - comonad
 - extra
 - ixset-typed
+- ixset-typed-binary-instance
+- ixset-typed-hashable-instance
 - rio
 - path
+- path-binary-instance
 - shake
 - shake-plus >= 0.3.0.0
 - within

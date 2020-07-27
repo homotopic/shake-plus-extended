@@ -40,7 +40,10 @@ library
     , comonad
     , extra
     , ixset-typed
+    , ixset-typed-binary-instance
+    , ixset-typed-hashable-instance
     , path
+    , path-binary-instance
     , rio
     , shake
     , shake-plus >=0.3.0.0
