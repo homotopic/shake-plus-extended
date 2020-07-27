@@ -4,8 +4,9 @@ This library extends
 [shake-plus](https://hackage.haskell.org/package/shake-plus), which enriches
 [shake](https://hackage.haskell.org/package/shake) with `ReaderT` and the
 `Path` library. This extended ruleset introduces
-[within](https://hackage.haskell.org/package/within), for better keeping track of
-source and output directories, as well as batch loading mechanisms.
+[within](https://hackage.haskell.org/package/within), for better keeping track
+of source and output directories, as well as batch loading mechanisms using
+[ixset-typed](https://hackage.haskell.org/package/ixset-typed).
 
 ## Using Within
 
