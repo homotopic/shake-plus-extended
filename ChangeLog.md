@@ -1,5 +1,12 @@
 # Changelog for shake-plus-extended
 
+## v0.2.0.0
+
+* Re-export `Binary Path` orphan.
+* Re-export `Binary IxSet` orphan.
+* Re-export `Hashable IxSet` orphan.
+* Merge `Shakebook.Local` with `Shakebook.FileRules`
+
 ## v0.1.2.0
 
 * Add a proxy version of `batchLoadIndex`.
