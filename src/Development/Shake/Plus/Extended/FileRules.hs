@@ -9,7 +9,7 @@
 module Development.Shake.Plus.Extended.FileRules (
   HasLocalOut(..)
 , (/%>)
-, (|/%>)
+, (/|%>)
 , (%^>)
 , (|%^>)
 ) where
