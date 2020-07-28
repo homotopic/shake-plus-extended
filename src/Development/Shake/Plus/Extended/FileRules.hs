@@ -26,13 +26,13 @@ class HasLocalOut r where
 
 -- | Variant of `(%>)` that passes the local directory from the environment into the callback.
 (/%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => FilePattern -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
-(/%>) xs ract = ask >>= \r -> do
+(/%>) xs ract = R.ask >>= \r -> do
   let d = view localOutL r
   (toFilePath d <> xs) %> (stripProperPrefix d >=> \x -> ract (d, x))
 
 -- | Variant of `(|%>)` that passes the local directory from the environment into the callback.
 (/|%>) :: (MonadReader r m, HasLocalOut r, MonadRules m) => [FilePattern] -> ((Path Rel Dir, Path Rel File) -> RAction r ()) -> m ()
-(/|%>) xs ract = ask >>= \r -> do
+(/|%>) xs ract = R.ask >>= \r -> do
   let d = view localOutL r
   ((toFilePath d <>) <$> xs) |%> (stripProperPrefix d >=> \x -> ract (d, x))
 

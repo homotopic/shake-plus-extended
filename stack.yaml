@@ -1,3 +1,7 @@
 resolver: nightly-2020-07-23
 packages:
 - .
+extra-deps:
+- ixset-typed-binary-instance-0.1.0.0@sha256:34b9cb1b501ede194b5c94477d0d4cbf4fd16f2ad3c83d67f41b10b048ba011f,989
+- ixset-typed-hashable-instance-0.1.0.1@sha256:b48d3559b53afcfb349db52046e3717031c496c381627a0eea53052f2467d803,996
+- path-binary-instance-0.1.0.0@sha256:0d9f36ab19f7f4ef6e9d25fba10fe6876010f69ce26e5c98fd45c24e4b365300,751
