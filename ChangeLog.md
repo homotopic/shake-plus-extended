@@ -1,5 +1,10 @@
 # Changelog for shake-plus-extended
 
+## v0.3.0.0
+
+* Add `SimpleSPlusEnv` with a `LogFunc` and a local `Path Rel Dir`.
+* Rework `runSimpleShakePlus` to `runLoggedShakePlus` and add new `runSimpleShakePlus`.
+
 ## v0.2.0.0
 
 * Re-export `Binary Path` orphan.
