@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           shake-plus-extended
-version:        0.3.0.0
+version:        0.4.0.0
 synopsis:       Experimental extensions to shake-plus
 description:    Experimental extensions to shake-plus - `within`-style file rules, HashMap and IxSet batch loaders.
 category:       development, shake
@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Development.Shake.Plus.Extended
+      Development.Shake.Plus.Extended.Conduit
       Development.Shake.Plus.Extended.FileRules
       Development.Shake.Plus.Extended.Loaders
       Development.Shake.Plus.Extended.Simple
@@ -35,9 +36,12 @@ library
       src
   default-extensions: BangPatterns BinaryLiterals ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TupleSections TypeFamilies TypeSynonymInstances ViewPatterns
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , binary-instances
     , comonad
     , extra
+    , http-conduit
     , ixset-typed
     , ixset-typed-binary-instance
     , ixset-typed-hashable-instance

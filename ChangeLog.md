@@ -1,5 +1,9 @@
 # Changelog for shake-plus-extended
 
+## v0.4.0.0
+
+* Add `Development.Shake.Plus.Extended.Conduit" with conduit oracle.
+
 ## v0.3.0.0
 
 * Add `SimpleSPlusEnv` with a `LogFunc` and a local `Path Rel Dir`.
