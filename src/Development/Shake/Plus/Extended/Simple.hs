@@ -13,7 +13,6 @@ module Development.Shake.Plus.Extended.Simple (
 , runSimpleShakePlus
 ) where
 
-import           Control.Exception
 import           Development.Shake.Plus
 import           Development.Shake.Plus.Extended.FileRules
 import           RIO
