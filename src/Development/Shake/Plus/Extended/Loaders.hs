@@ -74,4 +74,4 @@ batchLoadIndex' :: (MonadAction m, Ix.Indexable ixs x)
                 -> Path Rel Dir
                 -> [FilePattern]
                 -> m (Ix.IxSet ixs x)
-batchLoadIndex' proxy rd dir fp = Ix.fromList . HM.elems <$> batchLoad dir fp rd
+batchLoadIndex' _ rd dir fp = Ix.fromList . HM.elems <$> batchLoad dir fp rd
