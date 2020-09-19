@@ -1,5 +1,9 @@
 # Changelog for shake-plus-extended
 
+## V0.4.1.0
+
+* Add `runLoggedShakeForward`.
+
 ## v0.4.0.0
 
 * Add `Development.Shake.Plus.Extended.Conduit" with conduit oracle.

@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           shake-plus-extended
-version:        0.4.0.0
+version:        0.4.1.0
 synopsis:       Experimental extensions to shake-plus
 description:    Experimental extensions to shake-plus - `within`-style file rules, HashMap and IxSet batch loaders.
 category:       development, shake
